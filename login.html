@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Login | SIGERLYZER</title>
+    <link rel="icon" href="/favicon.jpeg" type="image/jpeg" />
+    <link href="/_app/immutable/assets/0.DuY3L4bu.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="min-h-screen flex items-center justify-center px-4 py-8" style="background: radial-gradient(ellipse at 40% 30%, #1e9db5 0%, #0a6575 50%, #064d5e 100%)">
+      <section class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden" aria-labelledby="login-title">
+        <div class="flex flex-col items-center pt-8 pb-6 px-8">
+          <div class="flex items-center gap-3">
+            <img src="/_app/immutable/assets/logo-pln.kg_9CNPE.jpeg" alt="Logo PLN" class="w-14 h-14 object-contain rounded-lg" />
+            <img src="/_app/immutable/assets/logo-sigerlyzer.0gvfbtlV.jpeg" alt="Logo SIGERLYZER" class="w-14 h-14 object-contain rounded-lg" />
+          </div>
+          <h1 id="login-title" class="text-2xl font-bold text-teal-700 mt-4 text-center tracking-wide">SIGERLYZER</h1>
+          <p class="text-gray-500 text-base mt-1 text-center font-medium">Shielding Lightning Tower Analyzer</p>
+          <p class="text-gray-400 text-xs mt-3">Masuk untuk mengakses aplikasi</p>
+        </div>
+        <div class="h-px bg-gray-200"></div>
+        <form method="POST" action="/login" class="px-8 pt-6 pb-4 flex flex-col gap-4">
+          {{ERROR}}
+          <div class="flex flex-col gap-1.5">
+            <label for="username-login" class="text-sm font-medium text-gray-700">Username</label>
+            <input id="username-login" type="text" name="username" autocomplete="username" placeholder="Masukkan username" required class="w-full px-4 py-3 rounded-xl bg-gray-100 text-sm text-gray-700 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-teal-300 transition" />
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label for="password-login" class="text-sm font-medium text-gray-700">Password</label>
+            <input id="password-login" type="password" name="password" autocomplete="current-password" placeholder="Masukkan password" required class="w-full px-4 py-3 rounded-xl border border-gray-800 text-sm text-gray-700 outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-teal-300 transition" />
+          </div>
+          <label class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer select-none">
+            <input type="checkbox" name="rememberMe" class="rounded border-gray-300 text-teal-600 focus:ring-teal-300" />
+            Ingat saya
+          </label>
+          <button type="submit" class="w-full py-3 rounded-xl bg-teal-600 text-white font-bold text-base mt-1 hover:bg-teal-700 active:scale-95 transition">LOGIN</button>
+        </form>
+        <p class="text-center text-xs text-gray-400 pb-6 pt-2 px-8">© 2026 PT PLN (Persero) UPT Tanjung Karang. All rights reserved.</p>
+      </section>
+    </main>
+  </body>
+</html>
