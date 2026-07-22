@@ -1,0 +1,42 @@
+<!-- START PAGE: PETA TRANSMISI -->
+<section class="page" id="peta">
+                <h2>Peta Transmisi</h2>
+                <article class="panel map-filter">
+                    <div class="filter-row map-tools">
+                        <select id="mapUltg"><option value="all">Semua ULTG</option><option>ULTG TEGINENENG</option><option>ULTG KOTABUMI</option><option>ULTG PAGELARAN</option><option>ULTG TARAHAN</option></select>
+                        <select id="mapSegmen"><option value="all">Semua Segmen</option><option>TRS 150KV DTLDS-DPSNA</option><option>TRS 150KV KTBMI-MNGLA</option><option>TRS 150KV BTEGI-ULBLU</option></select>
+                        <select id="mapRisk"><option value="all">Semua Kerawanan</option><option>Petir</option><option>Ular</option><option>Layang-layang</option><option>Kebakaran</option></select>
+                    </div>
+                    <div class="pill-tabs" id="mapMode"><button class="active" data-map-mode="risk">Kerawanan</button><button data-map-mode="gangguan">Gangguan</button><button data-map-mode="petir">Proteksi Petir</button><button data-map-mode="hewan">Proteksi Hewan</button></div>
+                </article>
+                <div class="map-grid">
+                    <article class="map-card">
+                        <div class="map-art">
+                            <span class="city c1">Martapura</span><span class="city c2">Penawar</span><span class="city c3">Liwa</span>
+                            <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
+                            <span class="marker m1">GI</span><span class="marker m2 warn">T</span><span class="marker m3">GI</span><span class="marker m4 fire">!</span><span class="marker m5">GI</span><span class="marker m6 warn">T</span>
+                        </div>
+                    </article>
+                    <aside class="stat-panel">
+                        <h3><i data-lucide="map-pin"></i>STATISTIK</h3>
+                        <div class="tower-count"><small>JUMLAH TOWER</small><strong>3989</strong></div>
+                        <div class="risk-grid" id="mapStats">
+                            <span>KERA <b>22</b></span><span>ULAR <b>185</b></span><span>BURUNG <b>149</b></span><span>LAYANG-LAYANG <b>144</b></span><span>PENCURIAN <b>169</b></span><span>KEBAKARAN <b>36</b></span><span>CRANE <b>15</b></span><span>SOSIAL <b>0</b></span>
+                        </div>
+                    </aside>
+                </div>
+                <div class="map-grid lower-map">
+                    <article class="panel no-pad">
+                        <div class="panel-title"><h3>Daftar Tower Terfilter</h3><span class="muted" id="mapNote">Semua tower</span></div>
+                        <table>
+                            <thead><tr><th>TOWER</th><th>SEGMEN</th><th>ULTG</th><th>KERAWANAN</th><th>PROTEKSI</th><th>STATUS</th></tr></thead>
+                            <tbody id="mapRows"></tbody>
+                        </table>
+                    </article>
+                    <aside class="stat-panel">
+                        <h3><i data-lucide="shield-check"></i>PROTEKSI</h3>
+                        <div class="risk-grid" id="protectionStats"></div>
+                    </aside>
+                </div>
+            </section>
+<!-- END PAGE: PETA TRANSMISI -->

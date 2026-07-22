@@ -1,134 +1,49 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGAP Dashboard</title>
-    <link rel="icon" href="favicon.jpeg" type="image/jpeg">
-    <link rel="stylesheet" href="css/dashboard.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
-    <div class="app">
-        <!-- START SIDEBAR NAVIGATION -->
-        <aside class="sidebar">
-            <div class="brand">
-                <img src="assets/images/sigap-logo.png" alt="SIGAP" class="brand-logo">
-                <div>
-                    <h1>SIGAP</h1>
-                    <p>Sistem Identifikasi Gangguan Akibat Petir</p>
-                </div>
-            </div>
-
-            <nav class="menu" aria-label="Menu utama">
-                <span class="menu-label">MENU</span>
-                <button class="nav-item active" data-page="dashboard"><i data-lucide="layout-dashboard"></i>Dashboard</button>
-                <button class="nav-item" data-page="analisa"><i data-lucide="clipboard-list"></i>Analisa Petir</button>
-                <button class="nav-item" data-page="induksi"><i data-lucide="zap"></i>Teg. Induksi</button>
-                <button class="nav-item" data-page="peta"><i data-lucide="map"></i>Peta Transmisi</button>
-
-                <button class="nav-item group open" data-page="master"><i data-lucide="folder"></i>Master Data<i class="chevron" data-lucide="chevron-up"></i></button>
-                <div class="submenu">
-                    <button class="nav-item sub" data-page="gardu"><i data-lucide="building-2"></i>Gardu Induk</button>
-                    <button class="nav-item sub" data-page="segmen"><i data-lucide="layers-3"></i>Segmen</button>
-                    <button class="nav-item sub" data-page="tower"><i data-lucide="radio-tower"></i>Tower</button>
-                    <button class="nav-item sub" data-page="rekap"><i data-lucide="list-checks"></i>Rekap Gangguan</button>
+<!-- START PAGE: DASHBOARD -->
+<section class="page active" id="dashboard">
+                <h2>Dashboard</h2>
+                <div class="summary-grid">
+                    <article class="summary-card">
+                        <i data-lucide="triangle-alert"></i>
+                        <span>Total Gangguan</span>
+                        <strong>371</strong>
+                    </article>
+                    <article class="summary-card">
+                        <i data-lucide="calendar-days"></i>
+                        <span>Bulan Ini</span>
+                        <strong>2</strong>
+                    </article>
                 </div>
 
-                <button class="nav-item" data-page="pengaturan"><i data-lucide="settings"></i>Pengaturan</button>
-            </nav>
-        </aside>
-        <!-- END SIDEBAR NAVIGATION -->
-
-        <main class="main">
-            <!-- START TOPBAR PROFILE -->
-            <header class="topbar">
-                <div></div>
-                <div class="profile-wrap">
-                    <button class="profile" type="button" aria-expanded="false" aria-haspopup="true">
-                        <span id="profileInitial">A</span>
-                        <strong id="profileName">Administrator<small id="profileUsername">admin</small></strong>
-                        <i data-lucide="chevron-down"></i>
-                    </button>
-                    <div class="profile-menu" role="menu">
-                        <div class="profile-menu-head">
-                            <span id="profileInitial2">A</span>
-                            <strong id="profileName2">Administrator<small id="profileUsername2">admin</small></strong>
-                        </div>
-                        <span class="role admin" id="profileRole">Administrator</span>
-                        <button type="button" data-profile-action="settings"><i data-lucide="settings"></i>Pengaturan</button>
-                        <button class="logout" type="button" data-profile-action="logout"><i data-lucide="log-out"></i>Keluar</button>
+                <article class="panel">
+                    <div class="panel-head">
+                        <h3><i data-lucide="chart-no-axes-combined"></i>Gangguan Year-on-Year (Akumulatif)</h3>
+                        <label class="check"><input type="checkbox" id="toggleValues">Tampilkan nilai</label>
                     </div>
+                    <div class="filter-row dashboard-filters">
+                        <select id="filterTahun"><option value="all">Tahun: Semua</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option></select>
+                        <select id="filterPareto"><option value="all">Pareto: Semua</option><option>PHT</option><option>INC</option><option>TD</option><option>ABOF</option></select>
+                        <select id="filterPenyebab"><option value="all">Penyebab: Semua</option><option>Petir</option><option>Alat</option><option>Ular</option><option>PFL</option><option>Pohon</option></select>
+                    </div>
+                    <div class="chart-wrap">
+                        <canvas id="gangguanChart"></canvas>
+                    </div>
+                </article>
+                <div class="dashboard-detail-grid">
+                    <article class="panel">
+                        <div class="panel-head"><h3><i data-lucide="bar-chart-3"></i>Tren Gangguan per Bulan</h3><label class="check"><input type="checkbox" id="toggleSubCause">Rinci sub-penyebab</label></div>
+                        <div class="chart-wrap compact-chart"><canvas id="monthlyChart"></canvas></div>
+                    </article>
+                    <article class="panel">
+                        <div class="panel-head"><h3><i data-lucide="pie-chart"></i>Komposisi per Pareto</h3></div>
+                        <div class="chart-wrap compact-chart"><canvas id="paretoChart"></canvas></div>
+                    </article>
                 </div>
-            </header>
-            <!-- END TOPBAR PROFILE -->
-
-            <!-- START DYNAMIC PAGE CONTENT -->
-            <div id="pages-root"></div>
-            <!-- END DYNAMIC PAGE CONTENT -->
-
-        </main>
-    </div>
-
-    <!-- START GLOBAL UPLOAD, TOAST, AND MODAL -->
-    <input class="hidden-file" id="dataUpload" type="file" accept=".csv,.json,text/csv,application/json">
-    <div class="toast" id="toast" role="status"></div>
-    <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
-        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-            <div class="modal-head">
-                <h3 id="modalTitle">Tambah Data</h3>
-                <button class="icon-btn" type="button" data-modal-close aria-label="Tutup"><i data-lucide="x"></i></button>
-            </div>
-            <form id="crudForm" class="modal-form"></form>
-        </section>
-    </div>
-    <!-- END GLOBAL UPLOAD, TOAST, AND MODAL -->
-
-    <!-- START APP SCRIPTS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Auth gate: redirect to login if not authenticated
-        (function () {
-            try {
-                const saved = localStorage.getItem("sigap:auth");
-                if (!saved) {
-                    window.location.replace("login.html");
-                    return;
-                }
-                const data = JSON.parse(saved);
-                if (!data || !data.username) {
-                    window.location.replace("login.html");
-                    return;
-                }
-                // Render profile
-                const initial = (data.name || data.username || "A").charAt(0).toUpperCase();
-                ["profileInitial", "profileInitial2"].forEach((id) => {
-                    const el = document.getElementById(id);
-                    if (el) el.textContent = initial;
-                });
-                ["profileName", "profileName2"].forEach((id) => {
-                    const el = document.getElementById(id);
-                    if (el) {
-                        el.firstChild.nodeValue = (data.name || data.username) + " ";
-                    }
-                });
-                ["profileUsername", "profileUsername2"].forEach((id) => {
-                    const el = document.getElementById(id);
-                    if (el) el.textContent = data.username;
-                });
-                if (data.role) {
-                    const roleEl = document.getElementById("profileRole");
-                    if (roleEl) roleEl.textContent = data.role === "admin" ? "Administrator" : "User";
-                }
-            } catch (err) {
-                window.location.replace("login.html");
-            }
-        })();
-    </script>
-    <script type="module" src="js/app.js?v=20260710-full"></script>
-    <!-- END APP SCRIPTS -->
-</body>
-</html>
-
-
-
+                <article class="panel no-pad">
+                    <div class="panel-title"><h3>Rekap Terfilter</h3><span class="muted" id="dashboardFilterNote">Semua data</span></div>
+                    <table>
+                        <thead><tr><th>TANGGAL</th><th>PARETO</th><th>SEGMEN / BAY</th><th>ULTG</th><th>STATUS</th><th>PENYEBAB</th></tr></thead>
+                        <tbody id="dashboardRows"></tbody>
+                    </table>
+                </article>
+            </section>
+<!-- END PAGE: DASHBOARD -->

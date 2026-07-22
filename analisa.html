@@ -1,0 +1,63 @@
+<!-- START PAGE: ANALISA PETIR -->
+<section class="page" id="analisa">
+                <div class="tabs" data-tabs="analisa">
+                    <button class="tab active" data-tab="form">Analisa</button>
+                    <button class="tab" data-tab="data">Data</button>
+                </div>
+                <div class="tab-panel active" data-tab-panel="analisa:form">
+                    <div class="analysis-grid">
+                <article class="panel form-panel">
+                        <form class="analysis-form" id="analysisForm">
+                            <label>Nama Tower<input id="namaTower" type="text" placeholder="Nama / no. tower"></label>
+                            <label>Tanggal<input id="tanggalAnalisa" type="date" value="2026-07-08"></label>
+                            <label>Tinggi Tower (m)<span class="segmented" data-mode-group="towerMode"><button type="button" class="active" data-mode="manual">Manual</button><button type="button" data-mode="auto">Otomatis</button></span><input id="tinggiTower" type="number" placeholder="Tinggi (m)"><select id="tipeTower" class="mode-field hidden-mode"><option value="">Pilih tipe</option><option>AA2-3</option><option>AA2+0</option><option>AA2+3</option><option>AA2+6</option><option>AA2+9</option><option>AA2+12</option><option>AA2+15</option><option>AA2+18</option><option>AA6+21</option><option>AA6+24</option><option>AA6+27</option><option>AA6+30</option><option>AA6+33</option><option>BB2-3</option><option>BB2+0</option><option>BB2+3</option><option>BB2+6</option><option>BB2+9</option><option>BB2+12</option><option>BB2+15</option><option>BB+18</option><option>CC2-3</option><option>CC2+0</option><option>CC2+3</option><option>CC2+6</option><option>CC2+9</option><option>CC2+12</option><option>CC2+15</option><option>CC+18</option><option>DD+0</option><option>DD+3</option><option>DD+6</option><option>DD+9</option><option>DD+12</option><option>DD+15</option><option>DD+18</option></select></label>
+                            <label class="sudut-field">Sudut Lindung (&deg;)<span class="segmented" data-mode-group="sudutMode"><button type="button" class="active" data-mode="manual">Manual</button><button type="button" data-mode="auto">Hitung</button></span><input id="sudutLindung" type="number" placeholder="Sudut (&deg;)"><div id="sudutGeometry" class="mode-field hidden-mode"><label>Tinggi GSW - Konduktor (m)<input id="tinggiGswKonduktor" type="number" placeholder="m"></label><label>Panjang Traves GSW (m)<input id="travesGsw" type="number" placeholder="m"></label><label>Panjang Traves Phasa Atas (m)<input id="travesPhasaAtas" type="number" placeholder="m"></label><label>Sudut Lindung<input id="sudutLindungHasil" type="number" placeholder="-" readonly></label></div></label>
+                            <label>Tegangan (kV)<select id="teganganAnalisa"><option>Pilih</option><option>70 kV</option><option>150 kV</option><option>275 kV</option><option>500 kV</option></select></label>
+                            <label>Pentanahan (Ohm)<input id="pentanahan" type="number" placeholder="Ohm"></label>
+                            <label>Insulator (Keping)<input id="insulator" type="number" placeholder="Jumlah Keping"></label>
+                            <label>Arching Horn (cm)<input id="archingHorn" type="number" placeholder="cm"></label>
+                            <label>Arus Petir (kA)<input id="arusPetir" type="number" placeholder="kA"></label>
+                            <label>Steepness (di/dt)<input id="steepness" type="number" placeholder="kA/us"></label>
+                            <button class="primary full" type="button" id="calculateAnalysis">Calculate</button>
+                            <button class="success full" type="submit">Save</button>
+                        </form>
+                        <h3>Analisa Shielding Failure (SF)</h3>
+                        <div class="mini-table analysis-result" id="sfResult">
+                            <span>URAIAN</span><span>OBJECT TOWER</span><span>ROLLING SPHERE</span><span>KESIMPULAN</span>
+                            <span>I kA Petir</span><span>-</span><span>-</span><span>-</span>
+                            <span>Sudut Lindung</span><span>-</span><span>-</span><span>-</span>
+                        </div>
+                    </article>
+                    <article class="panel tower-panel">
+                        <h3>Analisa Back Flash Over (BFO)</h3>
+                        <div class="tower-diagram">
+                            <div class="tower-svg" aria-hidden="true">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="phase-table top">Phasa Atas <b>NON BFO</b></div>
+                            <div class="phase-table mid">Phasa Tengah <b>NON BFO</b></div>
+                            <div class="phase-table low">Phasa Bawah <b>NON BFO</b></div>
+                        </div>
+                        <p class="bfo-note"><strong>Keterangan (Satuan kV):</strong> BIL AH, BIL INS, VT Tower, dan VT GSW akan terisi setelah Calculate.</p>
+                    </article>
+                    </div>
+                </div>
+
+                <div class="tab-panel" data-tab-panel="analisa:data">
+                    <div class="metric-grid">
+                        <article class="metric"><span>Total Analisa</span><strong>3</strong><small>Data tersimpan</small></article>
+                        <article class="metric"><span>Bulan Ini</span><strong>0</strong><small>Analisa tercatat</small></article>
+                        <article class="metric danger"><span>Shielding Failure</span><strong>0</strong><small>Analisa SF</small></article>
+                        <article class="metric success"><span>NON SF</span><strong>3</strong><small>Analisa NON SF</small></article>
+                        <article class="metric danger"><span>Back Flash Over</span><strong>3</strong><small>Analisa BFO</small></article>
+                        <article class="metric success"><span>NON BFO</span><strong>0</strong><small>Analisa NON BFO</small></article>
+                    </div>
+                    <article class="panel no-pad scroll-panel">
+                        <table class="wide-table">
+                            <thead><tr><th>TANGGAL</th><th>NAMA / LOKASI</th><th>MODE TOWER</th><th>TIPE TOWER</th><th>TINGGI TOWER (M)</th><th>TEGANGAN (KV)</th><th>PENTANAHAN (OHM)</th><th>INS. (KEPING)</th><th>ARCHING HORN (CM)</th></tr></thead>
+                            <tbody id="analisaRows"></tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+<!-- END PAGE: ANALISA PETIR -->

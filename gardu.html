@@ -1,0 +1,20 @@
+<!-- START PAGE: MASTER DATA - GARDU INDUK -->
+<section class="page" id="gardu">
+                <div class="page-actions">
+                    <h2>Gardu Induk</h2>
+                    <button class="primary" data-add="gi"><i data-lucide="plus"></i>Tambah GI</button>
+                </div>
+                <div class="table-tools"><input type="search" placeholder="Cari kode, nama..."><select><option>Semua Jenis</option></select><button class="ghost import-btn" type="button" data-import="gi"><i data-lucide="upload"></i>Upload Data</button></div>
+                <article class="panel no-pad">
+                    <table>
+                        <thead><tr><th>KODE</th><th>NAMA</th><th>NAMA SINGKAT</th><th>JENIS</th><th>KOORDINAT</th><th>AKSI</th></tr></thead>
+                        <tbody id="giRows"></tbody>
+                    </table>
+                </article>
+                <div class="tower-meta-grid">
+                    <article class="panel no-pad"><div class="panel-title"><h3>Jenis Kerawanan</h3><button class="primary slim" data-add="towerRisk"><i data-lucide="plus"></i>Tambah</button></div><div class="chip-list" id="towerRiskList"></div></article>
+                    <article class="panel no-pad"><div class="panel-title"><h3>Jenis Proteksi</h3><button class="primary slim" data-add="towerProtection"><i data-lucide="plus"></i>Tambah</button></div><div class="chip-list" id="towerProtectionList"></div></article>
+                    <article class="panel no-pad"><div class="panel-title"><h3>Jenis Gangguan</h3><button class="primary slim" data-add="towerFault"><i data-lucide="plus"></i>Tambah</button></div><div class="chip-list" id="towerFaultList"></div></article>
+                </div>
+            </section>
+<!-- END PAGE: MASTER DATA - GARDU INDUK -->
