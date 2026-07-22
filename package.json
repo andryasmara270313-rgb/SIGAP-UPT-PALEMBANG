@@ -1,0 +1,16 @@
+﻿{
+  "name": "dashboard1",
+  "version": "1.0.0",
+  "description": "SIGAP - Sistem Identifikasi Gangguan Akibat Petir",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx serve -l 8080 .",
+    "serve": "npx serve -l 8080 .",
+    "test": "echo \"No tests configured\""
+  },
+  "keywords": ["pln", "sigap", "dashboard", "petir"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {}
+}
