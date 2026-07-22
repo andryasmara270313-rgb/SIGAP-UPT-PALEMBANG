@@ -1,0 +1,1 @@
+var e=``+new URL(`../assets/logo-pln.kg_9CNPE.jpeg`,import.meta.url).href;export{e as t};

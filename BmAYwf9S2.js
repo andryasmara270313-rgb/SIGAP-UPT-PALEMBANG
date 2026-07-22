@@ -1,0 +1,1 @@
+function e(e){let t=e=>{e.data?.includes(`,`)&&e.preventDefault()},n=e=>{e.key===`,`&&e.preventDefault()};return e.addEventListener(`beforeinput`,t),e.addEventListener(`keydown`,n),{destroy(){e.removeEventListener(`beforeinput`,t),e.removeEventListener(`keydown`,n)}}}export{e as t};

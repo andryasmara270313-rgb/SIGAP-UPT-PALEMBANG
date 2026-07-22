@@ -1,0 +1,1 @@
+var e=``+new URL(`../assets/logo-sigerlyzer.0gvfbtlV.jpeg`,import.meta.url).href;export{e as t};
