@@ -1,0 +1,142 @@
+{
+  "capturedAt": "2026-07-22T04:02:21.134Z",
+  "baseUrl": "https://sigerlyzer.pages.dev/",
+  "pages": [
+    {
+      "route": "/dashboard",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/dashboard",
+      "bytes": 468965
+    },
+    {
+      "route": "/analisa-petir",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/analisa-petir",
+      "bytes": 32963
+    },
+    {
+      "route": "/analisa",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/analisa",
+      "bytes": 30186
+    },
+    {
+      "route": "/data",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/data",
+      "bytes": 35217
+    },
+    {
+      "route": "/laporan",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/laporan",
+      "bytes": 11485
+    },
+    {
+      "route": "/master/gi",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/master/gi",
+      "bytes": 96619
+    },
+    {
+      "route": "/master/rekap-gangguan",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/master/rekap-gangguan",
+      "bytes": 203581
+    },
+    {
+      "route": "/master/segment",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/master/segment",
+      "bytes": 34261
+    },
+    {
+      "route": "/master/teg-induksi",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/master/teg-induksi",
+      "bytes": 54081
+    },
+    {
+      "route": "/master/tower",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/master/tower",
+      "bytes": 63530
+    },
+    {
+      "route": "/pengaturan",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/pengaturan",
+      "bytes": 19869
+    },
+    {
+      "route": "/peta-transmisi",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/peta-transmisi",
+      "bytes": 2303645
+    },
+    {
+      "route": "/segment",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/master/segment",
+      "bytes": 34261
+    },
+    {
+      "route": "/tunnel-test",
+      "status": 200,
+      "finalUrl": "https://sigerlyzer.pages.dev/tunnel-test",
+      "bytes": 11658
+    }
+  ],
+  "dynamicRoutes": [],
+  "assetCount": 82,
+  "failedAssets": [
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/chunks/e",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/nodes/,15),o=k(r,",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/nodes/,",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/nodes/$%7Bt%7D",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/chunks/,components:4,type:",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/chunks/,components:1,type:",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/chunks/&&(i=this.pixelRatioFrom),i!==null&&e.set(i)%7DgetBinding(e,t,n)%7Breturn%20n.startsWith(",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/chunks/],",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/chunks/,",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/chunks/]%7D[e]||[e.replace(",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/chunks/e,t,n",
+      "status": 404
+    },
+    {
+      "href": "https://sigerlyzer.pages.dev/_app/immutable/chunks/this.tiles,this.map.getPixelRatio(",
+      "status": 404
+    }
+  ]
+}
