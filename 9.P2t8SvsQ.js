@@ -1,0 +1,1 @@
+import{F as e,L as t}from"../chunks/XBur7Hz5.js";import"../chunks/xihTtKlq.js";var n=t(`<h1 class="text-xl font-semibold text-gray-800">Laporan</h1>`);function r(t){e(t,n())}export{r as component};
